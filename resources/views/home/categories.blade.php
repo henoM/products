@@ -4,7 +4,7 @@
     @if(session('create'))
         <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
             <span class="badge badge-pill badge-primary">Success</span>
-            You successfully add  {{session('create')}}
+            You successfully add {{session('create')}}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -36,14 +36,15 @@
 
                                 </thead>
                                 <tbody>
-                                    @foreach($categories as $category)
-                                        <tr>
-                                            <td>{{  $category->category }}</td>
-                                            <td>
-                                                <a href="{{route('add.subcategory', $category->id)}}" class="btn btn-primary btn-xs">Add Subcategory</a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                @foreach($categories as $category)
+                                    <tr>
+                                        <td>{{  $category->category }}</td>
+                                        <td>
+                                            <a href="{{route('add.subcategory', $category->id)}}"
+                                               class="btn btn-primary btn-xs">Add Subcategory</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                             {{ $categories->links() }}

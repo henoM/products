@@ -20,7 +20,8 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col col-md-3">{!!  Form::label('case_count', 'Case Count',['class' => 'form-control-label'])!!}</div>
+                    <div
+                        class="col col-md-3">{!!  Form::label('case_count', 'Case Count',['class' => 'form-control-label'])!!}</div>
                     <div class="col-12 col-md-9">
                         {!!  Form::number('case_count', null, ['min'=>0, 'class' => 'form-control'])!!}
                         @if ($errors->has('case_count'))
@@ -31,7 +32,8 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col col-md-3">{!!  Form::label('name', 'Name',['class' => 'form-control-label'])!!}</div>
+                    <div
+                        class="col col-md-3">{!!  Form::label('name', 'Name',['class' => 'form-control-label'])!!}</div>
                     <div class="col-12 col-md-9">
                         {!!  Form::text('name', null, ['class' => 'form-control'])!!}
                         @if ($errors->has('name'))
@@ -42,7 +44,8 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col col-md-3">{!!  Form::label('description', 'Description',['class' => 'form-control-label'])!!}</div>
+                    <div
+                        class="col col-md-3">{!!  Form::label('description', 'Description',['class' => 'form-control-label'])!!}</div>
                     <div class="col-12 col-md-9">
                         {!! Form::textarea('description',null,['class'=>'form-control', 'rows' => 2, 'cols' => 40]) !!}
                         @if ($errors->has('description'))
@@ -53,7 +56,8 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col col-md-3">{!!  Form::label('brand', 'Brand',['class' => 'form-control-label'])!!}</div>
+                    <div
+                        class="col col-md-3">{!!  Form::label('brand', 'Brand',['class' => 'form-control-label'])!!}</div>
                     <div class="col-12 col-md-9">
                         {!!  Form::text('brand', null, ['class' => 'form-control'])!!}
                         @if ($errors->has('brand'))
@@ -64,7 +68,8 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col col-md-3">{!!  Form::label('size', 'Size',['class' => 'form-control-label'])!!}</div>
+                    <div
+                        class="col col-md-3">{!!  Form::label('size', 'Size',['class' => 'form-control-label'])!!}</div>
                     <div class="col-12 col-md-9">
                         {!!  Form::text('size', null, ['class' => 'form-control'])!!}
                         @if ($errors->has('size'))
@@ -75,7 +80,8 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col col-md-3">{!!  Form::label('name', 'Image',['class' => 'form-control-label'])!!}</div>
+                    <div
+                        class="col col-md-3">{!!  Form::label('name', 'Image',['class' => 'form-control-label'])!!}</div>
                     <div class="col-12 col-md-9">
                         {!!  Form::file('file', null, ['class' => 'imgInp form-control','id'=>'imgInp'])!!}<br>
                         @if ($errors->has('file'))
@@ -102,4 +108,5 @@
                 {!! Form::close() !!}
             </div>
         </div>
+    </div>
 @endsection

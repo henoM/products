@@ -4,7 +4,7 @@
     @if(session('create'))
         <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
             <span class="badge badge-pill badge-primary">Success</span>
-            You successfully add  {{session('create')}}
+            You successfully add {{session('create')}}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -13,7 +13,7 @@
     @if(session('delete'))
         <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
             <span class="badge badge-pill badge-danger">Success</span>
-            You successfully   {{session('delete')}}
+            You successfully {{session('delete')}}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -36,13 +36,17 @@
                             </div>
                             <div class="card-body">
                                 <div class="mx-auto d-block">
-                                    <img  src="{{url('/files/attachment'.$product->id.'/'.$product->files->first()->path)}}" alt="Card image cap">
+                                    <img
+                                        src="{{url('/files/attachment'.$product->id.'/'.$product->files->first()->path)}}"
+                                        alt="Card image cap">
                                     <h5 class="text-sm-center mt-2 mb-1">{{$product->upc}}</h5>
-                                    <div class="location text-sm-center"> {{$product->brand}}, {{$product->size}},{{$product->case_count}}</div>
+                                    <div class="location text-sm-center"> {{$product->brand}}, {{$product->size}}
+                                        ,{{$product->case_count}}</div>
                                     <div class="location text-sm-center"> {{$product->description}}</div>
                                 </div>
                                 <hr>
-                                <a href="{{route('product.view', $product->id)}}" class="btn btn-primary btn-xs">view</a>
+                                <a href="{{route('product.view', $product->id)}}"
+                                   class="btn btn-primary btn-xs">view</a>
                             </div>
                         </div>
                     </div>

@@ -2,16 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CategoryCreateRequest;
-use App\Http\Requests\ProductCreateRequest;
-use App\Http\Requests\SubCategoryCreateRequest;
 use App\Models\Category;
-use App\Models\File;
 use App\Models\Product;
-use App\Models\Subcategory;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -33,20 +26,29 @@ class HomeController extends Controller
     public function index()
     {
         $id = Auth::User()->id;
-        $products = Product::with('files')->where('user_id',$id)->orderBy('created_at','desc')->get();
+        $products = Product::with('files')->where('user_id', $id)->orderBy('created_at', 'desc')->get();
 
-        return view('home.products',compact('products'));
+        return view('home.products', compact('products'));
     }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function products()
     {
         $id = Auth::User()->id;
-        $products = Product::with('files')->where('user_id',$id)->orderBy('created_at','desc')->get();
+        $products = Product::with('files')->where('user_id', $id)->orderBy('created_at', 'desc')->get();
 
-        return view('home.products',compact('products'));
+        return view('home.products', compact('products'));
     }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function categories()
     {
         $categories = Category::paginate(10);
-        return view('home.categories',compact('categories'));
+
+        return view('home.categories', compact('categories'));
     }
 }

@@ -9,7 +9,8 @@
             <div class="card-body card-block">
                 {!! Form::open(['route' => 'csv.file.store','class' => 'form-horizonta','enctype'=>'multipart/form-data']) !!}
                 <div class="row form-group">
-                    <div class="col col-md-3">{!!  Form::label('name', 'CSV file',['class' => 'form-control-label'])!!}</div>
+                    <div
+                        class="col col-md-3">{!!  Form::label('name', 'CSV file',['class' => 'form-control-label'])!!}</div>
                     <div class="col-12 col-md-9">
                         {!!  Form::file('file', null, ['class' => 'imgInp form-control'])!!}<br>
                         @if ($errors->has('file'))
@@ -20,7 +21,8 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col col-md-3">{!!  Form::label('name', 'Categories',['class' => 'form-control-label'])!!}
+                    <div
+                        class="col col-md-3">{!!  Form::label('name', 'Categories',['class' => 'form-control-label'])!!}
                     </div>
                     <div class="col-12 col-md-9">
                         {!! Form::select('categories_id', $categories ,null,['class' => 'form-control-sm form-control'])!!}
@@ -35,4 +37,5 @@
                 {!! Form::close() !!}
             </div>
         </div>
+    </div>
 @endsection
