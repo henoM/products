@@ -13,6 +13,8 @@
 
 Route::get('/', 'MainController@index')->name('main');
 Route::get('/view{id}', 'MainController@view')->name('main.product.view');
+Route::get('/getcategory{id}', 'MainController@categoryGet')->name('category.get');
+Route::get('/getsubcategory{id}', 'MainController@subcategoryGet')->name('subcategory.get');
 
 
 Auth::routes();
@@ -37,11 +39,11 @@ Route::middleware('user')->group(function () {
          Route::get('/product/file{id}', 'ProductController@fileAdd')->name('file.add');
          Route::post('/product/file{id}', 'ProductController@fileStore')->name('file.store');
 
-
          Route::get('/category/create', 'CategoryController@createCategory')->name('category.create');
          Route::post('/category/create', 'CategoryController@storeCategory')->name('category.store');
          Route::get('/category/add{id}', 'CategoryController@addSubcategory')->name('add.subcategory');
          Route::post('/category/add{id}', 'CategoryController@storeSubcategory')->name('subcategory.store');
+
     });
 });
 

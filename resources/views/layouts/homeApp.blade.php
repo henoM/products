@@ -18,85 +18,9 @@
     <link href="{{ asset('assets/scss/style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/lib/vector-map/jqvmap.min.css') }}" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<style>.third-level-menu
-    {
-        position: absolute;
-        top: 0;
-        right: -150px;
-        width: 150px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: none;
-    }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
-    .third-level-menu > li
-    {
-        height: 30px;
-        background: #999999;
-    }
-    .third-level-menu > li:hover { background: #CCCCCC; }
-
-    .second-level-menu
-    {
-        position: absolute;
-        top: 30px;
-        left: 0;
-        width: 150px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: none;
-    }
-
-    .second-level-menu > li
-    {
-        position: relative;
-        height: 30px;
-        background: #999999;
-    }
-    .second-level-menu > li:hover { background: #CCCCCC; }
-
-    .top-level-menu
-    {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .top-level-menu > li
-    {
-        position: relative;
-        float: left;
-        height: 30px;
-        width: 150px;
-        background: #999999;
-    }
-    .top-level-menu > li:hover { background: #CCCCCC; }
-
-    .top-level-menu li:hover > ul
-    {
-        /* On hover, display the next level's menu */
-        display: inline;
-    }
-
-
-    /* Menu Link Styles */
-
-    .top-level-menu a /* Apply to all links inside the multi-level menu */
-    {
-        font: bold 14px Arial, Helvetica, sans-serif;
-        color: #FFFFFF;
-        text-decoration: none;
-        padding: 0 0 0 10px;
-
-        /* Make the link cover the entire list item-container */
-        display: block;
-        line-height: 30px;
-    }
-    .top-level-menu a:hover { color: #000000; }</style>
 </head>
 <body>
 @include('layouts.sidebar')
@@ -108,21 +32,11 @@
 
 </div>
 <script>
-    var expanded = false;
-
-    function showCheckboxes() {
-        var checkbox = document.getElementById("checkbox");
-        if (!expanded) {
-            checkbox.style.display = "block";
-            expanded = true;
-        }
-        else {
-            checkbox.style.display = "none";
-            expanded = false;
-        }
-    }
+    $('#myDropdown').on('show.bs.dropdown', function () {
+        // do something…
+    })
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
 {{--<script src="{{ asset('assets/js/plugins.js') }}"></script>--}}
 <script src="{{ asset('assets/js/main.js') }}"></script>
 @stack('scripts')

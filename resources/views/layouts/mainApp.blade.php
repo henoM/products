@@ -66,6 +66,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="active"><a href="{{ route('main') }}">Home <span class="sr-only">(current)</span></a></li>
+                        <li  style="margin-left: 20px" class="dropdown">
+                            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @foreach($categories as $category)
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="{{ route('category.get', $category->id) }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{$category->category}}</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            @foreach($category->subcategories as $subcategory)
+                                                <li><a href="{{ route('subcategory.get',$subcategory->id) }}">{{$subcategory->subcategory}}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
                         <li style="margin-left: 20px"><a href="{{ route('login') }}">Login</a></li>
                         <li  style="margin-left: 20px"><a href="{{ route('register') }}">Register</a></li>
                     </ul>
@@ -79,20 +94,5 @@
 @show
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script src="{{ asset('assets/js/main.js') }}"></script>
-<script>
-    $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
-        if (!$(this).next().hasClass('show')) {
-            $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
-        }
-        var $subMenu = $(this).next(".dropdown-menu");
-        $subMenu.toggleClass('show');
-
-        $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
-            $('.dropdown-submenu .show').removeClass("show");
-        });
-
-        return false;
-    });
-</script>
 </body>
 </html>
